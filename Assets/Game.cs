@@ -266,15 +266,15 @@ public class Game : MonoBehaviour
         {
             if (boostLeft > 0)
             {
-                rb.velocity = Vector2.up * 12;
+                rb.linearVelocity = Vector2.up * 12;
             }
             else if (slownessLeft > 0)
             {
-                rb.velocity = Vector2.up * 6;
+                rb.linearVelocity = Vector2.up * 6;
             }
             else
             {
-                rb.velocity = Vector2.up * 9;
+                rb.linearVelocity = Vector2.up * 9;
             }
             doJump = false;
         }
@@ -361,7 +361,7 @@ public class Game : MonoBehaviour
 
             Rigidbody2D rb = newBerry.AddComponent<Rigidbody2D>();
             rb.gravityScale = 0;
-            rb.velocity = new Vector2(0, -3);
+            rb.linearVelocity = new Vector2(0, -3);
         }
     }
 
@@ -491,7 +491,7 @@ public class Game : MonoBehaviour
         bird.transform.position = new Vector3(0, -4.3f, 0);
         bird.transform.localScale = new Vector3(1.35f, 1.35f, 1.35f);
         rb.gravityScale = 0;
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         score = 0;
         boostLeft = 0;
         slownessLeft = 0;
@@ -573,7 +573,7 @@ public class Game : MonoBehaviour
         if (bird.transform.position.y < groundYPosition)
         {
             bird.transform.position = new Vector2(bird.transform.position.x, groundYPosition);
-            rb.velocity = new Vector2(rb.velocity.x, 0);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
         }
 
         if (jumpArrow != null)
